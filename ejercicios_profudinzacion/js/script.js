@@ -8,3 +8,132 @@ const descripcion_normal = "Los Pokémon de tipo normal abarcan la mayor cantida
 const descripcion_fuego = "Los Pokémon de tipo tipo fuego basan sus ataques, principalmente, en el control de este elemento; y la mayoría pueden quemar al Pokémon oponente, mientras que ellos no sufren quemaduras. Son apasionados y, algunos, de mal carácter (como el Charizard de Ash); viven en cuevas o zonas rocosas y muy áridas; y, más probable, aun cerca de volcanes activos. Sin embargo, los únicos Pokémon que aparentemente suelen andar por lugares verdes como las praderas, son Ponyta y Rapidash, pudiendo ser que estos lugares les permiten galopar sin obstáculos. También, algunos son más dóciles, como Growlithe, Vulpix y sus respectivas evoluciones."
 
 /* Comienza a escribir su código aquí */
+
+
+
+
+// Selecciono todos los botones
+let botones = document.querySelectorAll("section button");
+
+botones.forEach(function(botones){
+    botones.addEventListener("click",function(){
+        let tipo = botones.classList.toString();
+        // Selecciono el articulo
+        let clase_articulo = document.querySelector("article");
+        // Quito todas las clases del articulo
+        clase_articulo.classList.remove(...clase_articulo.classList);
+
+        if (tipo === "fuego"){
+            // Le añado la clase nueva
+            clase_articulo.classList.add("fuego");
+            // Selecciono la etiqueta que tenga la clase header y modifico su texto
+            clase_articulo.querySelector(".header").textContent = "Tipo Fuego";
+            // Selecciono la etiqueta que tenga el id descripcion y modifico su texto
+            clase_articulo.querySelector("#descripcion").textContent = descripcion_fuego;
+            // Selecciono la etiqueta img y cambio su atributo src
+            clase_articulo.querySelector("img").src = "./images/fire_type.png";
+        }
+
+        if (tipo === "agua"){
+            clase_articulo.classList.add("agua");
+            clase_articulo.querySelector(".header").textContent = "Tipo Agua";
+            clase_articulo.querySelector("#descripcion").textContent = descripcion_agua;
+            clase_articulo.querySelector("img").src = "./images/water_type.png";
+        }
+
+        if (tipo === "planta"){
+            clase_articulo.classList.add("planta");
+            clase_articulo.querySelector(".header").textContent = "Tipo Planta";
+            clase_articulo.querySelector("#descripcion").textContent = descripcion_planta;
+            clase_articulo.querySelector("img").src = "./images/grass_type.png";
+        }
+
+        if (tipo === "electricidad"){
+            clase_articulo.classList.add("electricidad");
+            clase_articulo.querySelector(".header").textContent = "Tipo Electrico";
+            clase_articulo.querySelector("#descripcion").textContent = descripcion_electrico;
+            clase_articulo.querySelector("img").src = "./images/electric_type.png";
+        }
+
+        if (tipo === "normal"){
+            clase_articulo.classList.add("normal");
+            clase_articulo.querySelector(".header").textContent = "Tipo Normal";
+            clase_articulo.querySelector("#descripcion").textContent = descripcion_normal;
+            clase_articulo.querySelector("img").src = "./images/normal_type.png";
+        }
+
+    });
+});
+
+
+
+
+// *****************************************
+// ************  Otra forma  ***************
+// *****************************************
+
+
+// // Fuego
+// // Añado un evento al hacer click en el boton
+// document.querySelector("#btnFuego").addEventListener("click",function(){
+//     // Selecciono el articulo
+//     let clase_articulo = document.querySelector("article");
+//     // Quito todas las clases del articulo
+//     clase_articulo.classList.remove(...clase_articulo.classList);
+//     // Le añado la clase nueva
+//     clase_articulo.classList.add("fuego");
+//     // Selecciono la etiqueta que tenga la clase header y modifico su texto
+//     clase_articulo.querySelector(".header").textContent = "Tipo Fuego";
+//     // Selecciono la etiqueta que tenga el id descripcion y modifico su texto
+//     clase_articulo.querySelector("#descripcion").textContent = descripcion_fuego;
+//     // Selecciono la etiqueta img y cambio su atributo src
+//     clase_articulo.querySelector("img").src = "./images/fire_type.png";
+// });
+
+
+// // Agua
+// document.querySelector("#btnAgua").addEventListener("click",function(){
+//     let clase_articulo = document.querySelector("article");
+//     clase_articulo.classList.remove(...clase_articulo.classList);
+//     clase_articulo.classList.add("agua");
+
+//     clase_articulo.querySelector(".header").textContent = "Tipo Agua";
+//     clase_articulo.querySelector("#descripcion").textContent = descripcion_agua;
+//     clase_articulo.querySelector("img").src = "./images/water_type.png";
+// });
+
+
+// // Planta
+// document.querySelector("#btnPlanta").addEventListener("click",function(){
+//     let clase_articulo = document.querySelector("article");
+//     clase_articulo.classList.remove(...clase_articulo.classList);
+//     clase_articulo.classList.add("planta");
+
+//     clase_articulo.querySelector(".header").textContent = "Tipo Planta";
+//     clase_articulo.querySelector("#descripcion").textContent = descripcion_planta;
+//     clase_articulo.querySelector("img").src = "./images/grass_type.png";
+// });
+
+
+// // Electricidad
+// document.querySelector("#btnElectricidad").addEventListener("click",function(){
+//     let clase_articulo = document.querySelector("article");
+//     clase_articulo.classList.remove(...clase_articulo.classList);
+//     clase_articulo.classList.add("electricidad");
+
+//     clase_articulo.querySelector(".header").textContent = "Tipo Electrico";
+//     clase_articulo.querySelector("#descripcion").textContent = descripcion_electrico;
+//     clase_articulo.querySelector("img").src = "./images/electric_type.png";
+// });
+
+
+// // Normal
+// document.querySelector("#btnNormal").addEventListener("click",function(){
+//     let clase_articulo = document.querySelector("article");
+//     clase_articulo.classList.remove(...clase_articulo.classList);
+//     clase_articulo.classList.add("normal");
+
+//     clase_articulo.querySelector(".header").textContent = "Tipo Normal";
+//     clase_articulo.querySelector("#descripcion").textContent = descripcion_normal;
+//     clase_articulo.querySelector("img").src = "./images/normal_type.png";
+// });

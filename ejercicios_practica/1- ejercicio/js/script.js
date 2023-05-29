@@ -14,3 +14,10 @@ Leer el título del "header" del post e imprimirlo en consola.
 Cambiar título utilizando javascript por otro cualquiera.
 
 */
+
+// Ejercicio 1
+console.log(document.querySelector(".post-header h2").textContent);
+
+
+// Ejercicio 2
+document.querySelector(".post-header h2").textContent = "Hola";
